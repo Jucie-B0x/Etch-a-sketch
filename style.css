@@ -1,0 +1,21 @@
+.container{
+    width: 800px;
+    height: 800px;
+    outline: black solid 1px;
+}
+
+
+.grid {
+display: flex;
+flex-wrap: wrap;
+
+
+}
+.box{
+    outline:green solid 1px;
+    display: flex;
+    width:25%;
+    /*flex: 1 0 auto;*/
+    aspect-ratio: 1/1
+
+}
