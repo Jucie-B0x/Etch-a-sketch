@@ -1,7 +1,9 @@
-.container{
-    width: 800px;
-    height: 800px;
-    outline: black solid 1px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+
 }
 
 
@@ -9,13 +11,19 @@
 display: flex;
 flex-wrap: wrap;
 
+width: 800px;
+height: 800px;
+outline: black solid 1px;
+flex: 0 1 auto;
+
+
+
 
 }
-.box{
+div[class^="box"]{
     outline:green solid 1px;
-    display: flex;
-    width:25%;
-    /*flex: 1 0 auto;*/
+    flex: 1 0 50px;
     aspect-ratio: 1/1
+
 
 }
