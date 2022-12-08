@@ -25,12 +25,14 @@
         let gridWidth = 16;
         let gridSize = Math.pow(gridWidth, 2) ;
         let boxSize = (1/gridWidth) * GRIDSPACE;
-
+        
 
         for (i = 0; i < gridSize; i++) {
             const grid = document.querySelector(".grid");
             const box = document.createElement('div');
             box.classList.add('box'+ i);
+            box.style.width = boxSize + "px";
+            box.style.hove
             grid.appendChild(box);
 
         }
