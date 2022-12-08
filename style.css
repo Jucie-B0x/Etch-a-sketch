@@ -22,7 +22,6 @@ flex: 0 1 auto;
 }
 div[class^="box"]{
     outline:green solid 1px;
-    flex: 1 0 50px;
     aspect-ratio: 1/1
 
 
