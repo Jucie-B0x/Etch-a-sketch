@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-
-
-
-
-    <div class = container>
-        <div class = grid>
-
-        </div>
+  <body>
+    <div class="container">
+        <button>Canvas Size</button>
+      <div class="grid"></div>
     </div>
     <script>
-        const GRIDSPACE = 800;  
-        let gridWidth = 16;
-        let gridSize = Math.pow(gridWidth, 2) ;
-        let boxSize = (1/gridWidth) * GRIDSPACE;
-        
+      const CANVAS = 800;
+      let gridWidth = 16;
+      let gridSize = Math.pow(gridWidth, 2);
+      let boxSize = (1 / gridWidth) * CANVAS;
 
+      function drawGrid() {
         for (i = 0; i < gridSize; i++) {
-            const grid = document.querySelector(".grid");
-            const box = document.createElement('div');
-            box.classList.add('box'+ i);
-            box.style.width = boxSize + "px";
-            box.style.hove
-            grid.appendChild(box);
-
+          const grid = document.querySelector(".grid");
+          const box = document.createElement("div");
+          box.classList.add("box");
+          box.style.width = boxSize + "px";
+          grid.appendChild(box);
         }
+
+        const square = document.querySelectorAll(".box");
+        square.forEach((div) => {
+          div.addEventListener("mouseover", function(e) {
+            e.target.classList.add('shaded');
+          });
+        });
+        
+      }
+      drawGrid();
     </script>
-
-</body>
-
+  </body>
 </html>
