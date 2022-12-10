@@ -1,28 +1,28 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 98vh;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
+button {
+  margin: 32px;
+  font-size: large;
+}
 .grid {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-width: 800px;
-height: 800px;
-outline: black solid 1px;
-flex: 0 1 auto;
-
-
-
-
+  width: 800px;
+  height: 800px;
+  outline: black solid 1px;
+  flex: 0 1 auto;
 }
-div[class^="box"]{
-    outline:green solid 1px;
-    aspect-ratio: 1/1
+div[class^="box"] {
+  outline: grey solid 1px;
+  aspect-ratio: 1/1;
+}
 
-
+.shaded{
+    background-color:black;
 }
