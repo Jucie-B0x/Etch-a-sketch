@@ -16,8 +16,8 @@
     <script>
       const CANVAS = 800;
       let gridWidth = 16;
-      let gridSize = Math.pow(gridWidth, 2);
-      let boxSize = (1 / gridWidth) * CANVAS;
+      calcGridSize();
+      calcBoxSize();
       drawGrid();
 
       function drawGrid() {
@@ -39,23 +39,42 @@
 
       function newCanvas() {
         let newGridWidth = parseInt(
-          prompt("Enter a number for a new canvas. The maximum size is 100")
+          prompt("Enter a number for a new canvas. \nThe maximum size is 100")
         );
+        removeChildren();
         if (newGridWidth > 100) {
-          newGridWidth = 100;
-         }// else {
-        //   const deadBox = document.querySelectorAll('box');
-        //   for(i = 0; i < deadBox.length; i++){
-        //     deadBox[i].remove();
-        //   }
-        //   gridWidth = newGridWidth;
-          
-        // }
+          gridWidth = 100;
+          calcGridSize(gridWidth);
+          calcBoxSize(gridWidth);
+          drawGrid();
+        } 
+        else {
+        gridWidth = newGridWidth;
+        calcBoxSize(gridWidth);
+        calcGridSize(gridWidth);
+        drawGrid();
+        }
       }
 
-      const button = document.querySelector('button');
-      button.addEventListener('click', newCanvas);
+      function calcGridSize() {
+        gridSize = Math.pow(gridWidth, 2);
+        return gridSize;
+      }
+      function calcBoxSize() {
+        boxSize = (1 / gridWidth) * CANVAS;
+        return boxSize;
+      }
+      function removeChildren() {
+        let e = document.querySelector('.grid')
+        let first = e.firstElementChild;
+        while (first) {
+          first.remove();
+          first = e.firstElementChild;
+        }
+      }
 
+      const button = document.querySelector("button");
+      button.addEventListener("click", newCanvas);
     </script>
   </body>
 </html>
